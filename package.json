@@ -1,0 +1,27 @@
+{
+  "name": "ai-business-automation-saas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Business Automation SaaS platform for small businesses - chatbot, email automation, CRM, invoices, and analytics.",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build && cd ../server && npm run build"
+  },
+  "keywords": [
+    "saas",
+    "ai",
+    "business-automation",
+    "openai",
+    "react",
+    "express",
+    "sql-server"
+  ],
+  "author": "AI Business Automation Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

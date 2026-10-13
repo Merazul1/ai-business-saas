@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Digital — Modern Web, AI & Cloud Automation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+
+  <!-- Navigation Bar -->
+  <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 transition-all">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-base shadow-md shadow-indigo-500/20">
+          ⚡
+        </div>
+        <div>
+          <span class="font-extrabold text-lg text-slate-900 tracking-tight">Apex Digital</span>
+          <span class="hidden sm:inline-block ml-2 text-[11px] font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">Client Demo</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#services" class="hover:text-indigo-600 transition-colors">Services</a>
+        <a href="#pricing" class="hover:text-indigo-600 transition-colors">Pricing</a>
+        <a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="window.AuraWidget.open('Hi! Can you tell me more about Apex Digital services?')" class="text-xs font-semibold px-3 py-2 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors flex items-center gap-1.5">
+          <span>💬</span> Chat with AI
+        </button>
+        <a href="http://localhost:3000" target="_blank" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold text-xs sm:text-sm hover:bg-indigo-700 shadow-sm shadow-indigo-600/30 transition-all">
+          Admin Dashboard ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-white via-indigo-50/30 to-slate-50 py-20 px-6 text-center border-b border-slate-200/80">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100/70 border border-indigo-200 text-indigo-800 text-xs font-bold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        AI Business Automation SaaS Active
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-none">
+        Scale Your Business with <br class="hidden sm:inline" />
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">Automated Intelligence</span>
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        We architect high-performing web platforms, intelligent customer-support chatbots, and automated invoicing systems so your team can focus on growth.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#pricing" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 shadow-lg shadow-indigo-600/25 transition-all">
+          Explore Pricing & Plans
+        </a>
+        <button onclick="window.AuraWidget.open('What is your turnaround time and how do we begin?')" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-semibold text-sm hover:bg-slate-50 shadow-sm transition-all flex items-center justify-center gap-2">
+          <span>🤖</span> Ask AI Assistant
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 1. SERVICES SECTION (#services)           -->
+  <!-- ========================================== -->
+  <section id="services" class="py-20 px-6 max-w-7xl mx-auto scroll-mt-20">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+        Our Core Solutions
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+        Engineered for Modern Business Growth
+      </h2>
+      <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+        From custom frontends to automated lead triage and database reliability, we build systems that save time and close clients.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Service 1: Web & SaaS -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group hover:border-indigo-300">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+            🌐
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Web & SaaS Development</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Production-grade web apps built with React, Node.js, and SQL Server. Fast loading, responsive, and ready for high traffic.
+          </p>
+          <ul class="text-xs text-slate-500 space-y-2 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Custom React Dashboards
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> REST & WebSocket APIs
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Secure JWT Authentication
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-700">From $3,000</span>
+          <button onclick="window.AuraWidget.open('I am interested in Web & SaaS Development. What are the requirements and timeline?')" class="text-xs font-semibold text-slate-600 hover:text-indigo-600 flex items-center gap-1">
+            Inquire via AI →
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 2: AI Workflow & Chatbots -->
+      <div class="bg-white rounded-2xl p-6 border-2 border-indigo-500 shadow-md flex flex-col justify-between relative group">
+        <div class="absolute -top-3 right-6 bg-indigo-600 text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow">
+          Most Requested
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+            🤖
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">AI Workflow & Bot Automation</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Embeddable 24/7 visitor chatbots, smart lead capture, and automated email classification powered by OpenAI & Redis.
+          </p>
+          <ul class="text-xs text-slate-500 space-y-2 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Zero-dependency embed widget
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Custom business knowledge base
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Auto-enrollment into CRM
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-700">From $2,000</span>
+          <button onclick="window.AuraWidget.open('Can you explain how the AI Chatbot captures visitor leads and connects with my website?')" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
+            Ask Bot Demo →
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 3: Invoicing & Reporting -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group hover:border-indigo-300">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+            📄
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Invoicing & Financial Automation</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Server-side PDF invoice generation, real-time tax calculation, line items management, and scheduled client billing notices.
+          </p>
+          <ul class="text-xs text-slate-500 space-y-2 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> 1-Click PDFKit Invoice Generation
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Automated Tax & Subtotals
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Payment Status Tracking
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-700">From $1,800</span>
+          <button onclick="window.AuraWidget.open('How does automated invoicing work in this platform?')" class="text-xs font-semibold text-slate-600 hover:text-indigo-600 flex items-center gap-1">
+            Inquire via AI →
+          </button>
+        </div>
+      </div>
+
+      <!-- Service 4: Cloud & Database Maintenance -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group hover:border-indigo-300">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+            ⚡
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Cloud & Database Support</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+            Ongoing optimization for Microsoft SQL Server, Redis key-value cache, database backups, and 99.9% uptime SLA monitoring.
+          </p>
+          <ul class="text-xs text-slate-500 space-y-2 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> SQL Server Query Tuning
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Redis Queue Health Checks
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-500 font-bold">✓</span> Proactive Bug Fixes
+            </li>
+          </ul>
+        </div>
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-700">$500 / month</span>
+          <button onclick="window.AuraWidget.open('What is included in the $500/mo Cloud & Database support package?')" class="text-xs font-semibold text-slate-600 hover:text-indigo-600 flex items-center gap-1">
+            Inquire via AI →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 2. PRICING SECTION (#pricing / #prices)    -->
+  <!-- ========================================== -->
+  <section id="pricing" class="py-20 px-6 bg-slate-100/70 border-y border-slate-200 scroll-mt-20">
+    <div id="prices" class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+          Transparent Pricing
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+          Flexible Plans for Every Stage
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          No hidden fees. Setup takes under 48 hours. Cancel or upgrade anytime.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <!-- Tier 1: Starter -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-lg text-slate-900">Starter Automation</h3>
+              <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Solo & SMBs</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500">Perfect for small websites wanting 24/7 lead capture and basic support.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-slate-900">$1,500</span>
+              <span class="text-xs text-slate-500 font-medium">setup + $199/mo</span>
+            </div>
+
+            <hr class="my-6 border-slate-100" />
+
+            <div class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">Included Features:</div>
+            <ul class="space-y-3 text-xs text-slate-600">
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Embeddable AI Chatbot Widget
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Automatic Lead & Email Capture
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Up to 1,500 AI conversations / month
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Standard CRM Dashboard access
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Email notification on qualified leads
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-100">
+            <button onclick="window.AuraWidget.open('I want to get started with the Starter Plan ($1,500 setup). What are the next steps?')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-colors">
+              Get Started with Starter
+            </button>
+          </div>
+        </div>
+
+        <!-- Tier 2: Growth (Featured) -->
+        <div class="bg-white rounded-3xl p-8 border-2 border-indigo-600 shadow-xl flex flex-col justify-between relative scale-100 lg:-translate-y-2">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-xs font-extrabold uppercase px-4 py-1 rounded-full tracking-wider shadow-md">
+            Most Popular Choice
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-lg text-slate-900">Growth Automation</h3>
+              <span class="text-[11px] font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200">Recommended</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500">For scaling agencies and service companies looking for full back-office automation.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-slate-900">$3,200</span>
+              <span class="text-xs text-slate-500 font-medium">setup + $499/mo</span>
+            </div>
+
+            <hr class="my-6 border-slate-100" />
+
+            <div class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">Everything in Starter, plus:</div>
+            <ul class="space-y-3 text-xs text-slate-600">
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Custom Knowledge Base & Tone Tuning
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Automatic Inbound Email Triage & Auto-Reply
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Automated PDF Invoicing & Tax Calculations
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Up to 15,000 AI conversations / month
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Redis Queue & In-Memory Acceleration
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Priority Slack & Phone Support
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-100">
+            <button onclick="window.AuraWidget.open('I am interested in the Growth Automation Tier ($3,200). Can you prepare a proposal?')" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md shadow-indigo-600/30 transition-all">
+              Choose Growth Plan
+            </button>
+          </div>
+        </div>
+
+        <!-- Tier 3: Enterprise -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-lg text-slate-900">Enterprise Custom</h3>
+              <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">High Volume</span>
+            </div>
+            <p class="mt-2 text-xs text-slate-500">Dedicated multi-tenant infrastructure, custom ERP integrations, and SLA.</p>
+            
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-slate-900">$6,500+</span>
+              <span class="text-xs text-slate-500 font-medium">custom + $1,200/mo</span>
+            </div>
+
+            <hr class="my-6 border-slate-100" />
+
+            <div class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">Enterprise Perks:</div>
+            <ul class="space-y-3 text-xs text-slate-600">
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Dedicated Microsoft SQL Server Database
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Custom Fine-Tuned AI Models
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Human Agent Live Takeover Handoff
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> Unlimited Team Seats & White-Labeling
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-indigo-600 font-bold">✓</span> 99.9% Uptime Guarantee & SLA
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-100">
+            <button onclick="window.AuraWidget.open('Hello, I want to talk to your enterprise engineering team about custom integrations.')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-colors">
+              Talk to Enterprise Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. CONTACT SECTION (#contact)              -->
+  <!-- ========================================== -->
+  <section id="contact" class="py-20 px-6 max-w-7xl mx-auto scroll-mt-20">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+        Get in Touch
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+        Ready to Automate Your Business?
+      </h2>
+      <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+        Send us your project details below or chat instantly with our AI assistant. Inquiries are triaged and confirmed in real time.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Contact Info Cards -->
+      <div class="lg:col-span-5 space-y-4">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg shrink-0">
+              ✉️
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Direct Email</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Automated triage responds within 15 minutes.</p>
+              <a href="mailto:contact@apexdigital.example.com" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 mt-1 inline-block">
+                contact@apexdigital.example.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg shrink-0">
+              📞
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Phone & WhatsApp</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Mon–Fri from 9:00 AM to 6:00 PM EST.</p>
+              <p class="text-xs font-semibold text-indigo-600 mt-1">+1 (555) 234-5678</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg shrink-0">
+              🏢
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Headquarters</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Apex Digital Solutions LLC</p>
+              <p class="text-xs text-slate-700 mt-1">100 Innovation Way, Suite 400, New York, NY</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Assistant Promo Box -->
+        <div class="bg-gradient-to-tr from-indigo-900 to-slate-900 text-white rounded-2xl p-6 shadow-md">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-bold text-indigo-300 uppercase tracking-wider">AI Assistant Online</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Need an immediate reply? You don't have to wait for office hours. Click below to chat directly with our AI assistant right now!
+          </p>
+          <button onclick="window.AuraWidget.open('Hi, I need a consultation on automating customer inquiries!')" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow transition-colors flex items-center justify-center gap-2">
+            <span>💬</span> Open AI Chat Assistant
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Contact Form -->
+      <div class="lg:col-span-7 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+        <h3 class="text-lg font-bold text-slate-900 mb-1">Send an Automated Inquiry</h3>
+        <p class="text-xs text-slate-500 mb-6">
+          Filling out this form will push your message into the backend AI pipeline, enroll you into the CRM, and trigger an automated response.
+        </p>
+
+        <form id="contact-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+              <input id="c-name" type="text" required placeholder="e.g. Alex Morgan" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label>
+              <input id="c-email" type="email" required placeholder="alex@company.com" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number</label>
+              <input id="c-phone" type="text" placeholder="+1 (555) 000-0000" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Primary Interest</label>
+              <select id="c-service" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 bg-white">
+                <option value="AI Workflow & Chatbots">AI Workflow & Chatbot Setup</option>
+                <option value="Web & SaaS Development">Web & SaaS Custom App</option>
+                <option value="Automated Invoicing">Automated PDF Invoicing</option>
+                <option value="Cloud Maintenance">Cloud & SQL Server Maintenance</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Project Details / Message *</label>
+            <textarea id="c-message" rows="4" required placeholder="Describe your business goals, estimated timeline, and any specific questions..." class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 font-sans"></textarea>
+          </div>
+
+          <button id="c-submit" type="submit" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition-all flex items-center justify-center gap-2">
+            <span>🚀</span> Submit Inquiry & Trigger AI Pipeline
+          </button>
+        </form>
+
+        <!-- Feedback Alert Container -->
+        <div id="c-alert" class="hidden mt-4 p-4 rounded-xl text-xs leading-relaxed border transition-all"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-auto py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-md bg-indigo-600 flex items-center justify-center text-white font-bold text-[10px]">A</div>
+        <span class="font-bold text-slate-700">Apex Digital Solutions LLC</span>
+        <span>•</span>
+        <span>Demo Client Website with Embedded AI Bot</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#services" class="hover:text-indigo-600">Services</a>
+        <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
+        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+        <a href="http://localhost:3000" target="_blank" class="font-semibold text-indigo-600 hover:underline">Open Admin SaaS Dashboard</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Form Submission Script -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const alertBox = document.getElementById('c-alert');
+    const submitBtn = document.getElementById('c-submit');
+
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('c-name').value;
+      const email = document.getElementById('c-email').value;
+      const phone = document.getElementById('c-phone').value;
+      const service = document.getElementById('c-service').value;
+      const message = document.getElementById('c-message').value;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>⏳</span> Processing AI Triage...';
+
+      try {
+        const res = await fetch('http://localhost:5000/api/email/inbound', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tenantId: 'tenant_default_demo',
+            fromEmail: email,
+            fromName: name,
+            subject: `Website Inquiry: ${service}`,
+            body: `Phone: ${phone}\nService requested: ${service}\n\nMessage:\n${message}`
+          })
+        });
+
+        const data = await res.json();
+
+        alertBox.className = 'mt-4 p-4 rounded-xl text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 block';
+        alertBox.innerHTML = `
+          <div class="font-bold mb-1 flex items-center gap-1.5">
+            <span>✅</span> Inquiry Received & Triaged by AI!
+          </div>
+          <p class="mb-2"><strong>Category:</strong> ${data.category || 'SALES_LEAD'} • <strong>Urgency:</strong> ${data.urgency || 'HIGH'}</p>
+          <p class="text-emerald-700 mb-2">Your contact has been automatically enrolled into the <strong>CRM</strong> on the Admin Dashboard (<a href="http://localhost:3000" target="_blank" class="underline font-bold">http://localhost:3000</a>).</p>
+          <div class="bg-white/70 p-2.5 rounded border border-emerald-200 font-mono text-[11px] text-slate-700">
+            <strong>Automated Reply Draft:</strong><br/>
+            ${data.replyBody ? data.replyBody.replace(/\\n/g, '<br/>') : 'Automated confirmation dispatched.'}
+          </div>
+        `;
+
+        form.reset();
+      } catch (err) {
+        alertBox.className = 'mt-4 p-4 rounded-xl text-xs bg-rose-50 text-rose-800 border border-rose-200 block';
+        alertBox.innerHTML = '⚠️ Could not reach server. Please ensure the backend server is running on port 5000.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>🚀</span> Submit Inquiry & Trigger AI Pipeline';
+      }
+    };
+  </script>
+
+  <!-- THE EMBEDDED AI CHAT WIDGET -->
+  <script 
+    src="widget.js" 
+    data-tenant-id="tenant_default_demo"
+    data-api-base="http://localhost:5000/api">
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+// Prisma schema for AI Business Automation SaaS
+// Configured for Microsoft SQL Server (mssql)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Tenant {
+  id               String            @id @default(cuid())
+  name             String
+  companyEmail     String
+  industry         String            @default("General")
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  users            User[]
+  leads            Lead[]
+  conversations    Conversation[]
+  invoices         Invoice[]
+  businessSettings BusinessSettings?
+
+  @@map("tenants")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  tenantId     String
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("ADMIN") // ADMIN, AGENT, VIEWER
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  tenant       Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@map("users")
+}
+
+model Lead {
+  id            String         @id @default(cuid())
+  tenantId      String
+  name          String
+  email         String
+  phone         String?
+  company       String?
+  status        String         @default("NEW") // NEW, CONTACTED, QUALIFIED, PROPOSAL, CLOSED
+  score         Int            @default(50)    // 0 to 100 lead score
+  source        String         @default("CHATBOT") // CHATBOT, EMAIL, MANUAL
+  notes         String?        @db.NVarChar(Max)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  tenant        Tenant         @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  conversations Conversation[]
+  invoices      Invoice[]
+
+  @@index([tenantId])
+  @@index([email])
+  @@map("leads")
+}
+
+model Conversation {
+  id           String        @id @default(cuid())
+  tenantId     String
+  leadId       String?
+  channel      String        @default("WEB_CHAT") // WEB_CHAT, EMAIL, SMS
+  status       String        @default("OPEN")     // OPEN, RESOLVED, ESCALATED
+  sentiment    String        @default("NEUTRAL")  // POSITIVE, NEUTRAL, NEGATIVE
+  summary      String?       @db.NVarChar(Max)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  tenant       Tenant        @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  lead         Lead?         @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  messages     ChatMessage[]
+
+  @@index([tenantId])
+  @@index([leadId])
+  @@map("conversations")
+}
+
+model ChatMessage {
+  id             String       @id @default(cuid())
+  conversationId String
+  senderType     String       // VISITOR, AI_BOT, AGENT
+  content        String       @db.NVarChar(Max)
+  tokensUsed     Int          @default(0)
+  createdAt      DateTime     @default(now())
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+  @@map("chat_messages")
+}
+
+model Invoice {
+  id            String        @id @default(cuid())
+  tenantId      String
+  leadId        String
+  invoiceNumber String        @unique
+  clientName    String
+  clientEmail   String
+  amount        Float
+  tax           Float         @default(0.0)
+  status        String        @default("DRAFT") // DRAFT, SENT, PAID, OVERDUE
+  issueDate     DateTime      @default(now())
+  dueDate       DateTime
+  itemsJson     String        @db.NVarChar(Max)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  tenant        Tenant        @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  lead          Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([leadId])
+  @@map("invoices")
+}
+
+model BusinessSettings {
+  id                 String   @id @default(cuid())
+  tenantId           String   @unique
+  botName            String   @default("Aura AI")
+  greetingMessage    String   @default("Hi there! How can we assist your business today?")
+  systemPrompt       String   @db.NVarChar(Max)
+  knowledgeBaseText  String   @db.NVarChar(Max)
+  autoReplyEmail     Boolean  @default(true)
+  qualificationGoal  String   @default("Collect visitor's name, email, project budget, and timeline.")
+  themeColor         String   @default("#4f46e5")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  tenant             Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@map("business_settings")
+}
